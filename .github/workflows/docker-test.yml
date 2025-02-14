@@ -33,3 +33,13 @@ jobs:
           format: 'table'
           exit-code: 1
           severity: 'CRITICAL,HIGH'
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: ${{ github.ref }}
+          base: development
+          title: "Auto PR: ${{ github.ref }}"
+          body: "This PR was auto-generated from ${{ github.ref }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
