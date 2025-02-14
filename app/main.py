@@ -22,3 +22,5 @@ def get_all_tasks():
     tasks = list(collection.find({}, {"_id": 0}))
     return {"tasks": tasks}
 
+#main . py
+
